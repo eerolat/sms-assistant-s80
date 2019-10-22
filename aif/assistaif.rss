@@ -1,0 +1,32 @@
+//
+// ASSISTAIF.RSS - resource file for SMS assistant application
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+
+#include <aiftool.rh>
+
+
+CHARACTER_SET UTF8
+
+
+RESOURCE AIF_DATA
+	{
+	app_uid=0x101F3CB6;
+	//
+	caption_list=
+		{ 
+		CAPTION { code=ELangEnglish; caption="SMS Assistant"; },
+		CAPTION { code=ELangAmerican; caption="SMS Assistant"; },
+		CAPTION { code=ELangGerman; caption="SMS Assistent"; },
+		CAPTION { code=ELangItalian; caption="SMS Assistant"; },
+		CAPTION { code=ELangBelgianFlemish; caption="SMS Assistant"; },
+		CAPTION { code=ELangFinnish; caption="SMS-assistentti"; },
+		CAPTION { code=ELangPolish; caption="SMS Assistant"; },
+		CAPTION { code=ELangOther; caption="SMS Assistant"; }
+		};
+	//
+	num_icons=2;
+	//
+	embeddability=KAppNotEmbeddable;
+	}
+

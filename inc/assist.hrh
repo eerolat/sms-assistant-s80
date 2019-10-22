@@ -1,0 +1,67 @@
+//
+// ASSIST.HRH - resource header file for SMS Assistant application
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+
+
+
+#ifndef __ASSIST_HRH__
+#define __ASSIST_HRH__
+
+#define KImageFileName "\\system\\apps\\assist\\assist.mbm"
+#define KIconFile _LIT(KIconFileName, "assist.mbm");
+
+#define KAssistMaxMessageLength 160
+#define KMaxTelephoneNumberLength 30
+#define KIniFileVersion 299
+
+
+enum
+	{
+	EAssistBidCancel,
+	EAssistBidOk
+	};
+
+
+enum
+	{
+	EAssistForwardRecipient=0x100
+	};
+
+
+enum
+	{
+	EAssistCommunicationsSelector=0x100,
+	EAssistMessageEditor
+	};
+
+
+enum
+	{
+	EAssistModeSelector=0x100
+	};
+
+
+enum
+	{
+	EAssistDeactivationSelector=0x100,
+	EAssistDeactivationTime
+	};
+
+
+enum 
+    {
+	EAssistCmdActivate=0x2000,
+	EAssistCmdDeactivate,
+    EAssistCmdSend,
+	EAssistCmdMessage,
+	EAssistCmdAbout,
+	EAssistCmdAutomaticDeactivation,
+	EAssistCmdReply,
+	EAssistCmdForward,
+	EAssistCmdMode
+    };
+
+
+#endif  //__ASSIST_HRH__
+

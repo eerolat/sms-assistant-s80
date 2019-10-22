@@ -1,0 +1,92 @@
+// SMASSIST.LOC
+//
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+
+// English version
+
+// Application title
+#define SMASSIST_APPLICATION_TITLE			"SMS-assistentti"
+#define SMASSIST_INDICATION_ACTIVE_REPLY	 "K‰ynniss‰"
+#define SMASSIST_INDICATION_INACTIVE_REPLY   "Sammutettu"
+#define SMASSIST_INDICATION_ACTIVE_FORWARD	 "K‰ynniss‰"
+#define SMASSIST_INDICATION_INACTIVE_FORWARD "Sammutettu"
+
+// Application view message
+#define SMASSIST_INSTRUCTIONS_REPLY			"Sovelluksen ollessa k‰ynnistettyn‰ t‰m‰nhetkisess‰\ntoimintatilassa, se vastaa tekstiviesteihisi ja puhe-\nluihisi automaattisesti tekstiviestin avulla."
+#define SMASSIST_INSTRUCTIONS_FORWARD		"Sovelluksen ollessa k‰ynnistettyn‰ t‰m‰nhetkisess‰\ntoimintatilassa, se v‰litt‰‰ kopion saapuvista teks-\ntiviesteist‰ toiseen matkapuhelimeen."
+
+// Reply message
+#define SMASSIST_MESSAGE_HEADER				"Automaattinen vastaus: "
+
+// Notes
+#define SMASSIST_NO_MESSAGE_NOTE_TITLE		"Viesti m‰‰rittelem‰tt‰"
+#define SMASSIST_NO_MESSAGE_NOTE_MESSAGE	"Haluatko k‰ytt‰‰ SMS-\nassistenttia tyhj‰ll‰ viestill‰?"
+#define SMASSIST_NO_RECIPIENT_NOTE_TITLE	"Vastaanottaja m‰‰rittelem‰tt‰"
+#define SMASSIST_NO_RECIPIENT_NOTE_MESSAGE	"Vastaanottajan m‰‰rittelem‰tt‰\nj‰tt‰minen lopettaa automaat-tisen\n viestinn‰n."
+#define SMASSIST_STARTUP_NOTE_MESSAGE		"Anna SMS-assistentille lupa\nl‰hett‰‰ tekstiviestej‰ ilman\nlis‰varmistusta."
+#define SMASSIST_STARTUP_CLOSING_MESSAGE    "SMS-assistenttia ei voida\nk‰ynnist‰‰ ilman lupaa teksti-\nviestien l‰hett‰miseksi."
+#define SMSASSIST_EXIT_NOTE_MESSAGE			"SMS-assistentin sulkeminen lopettaa\nautomaattisen viestinn‰n.\nHaluatko jatkaa?"
+#define SMSASSIST_ABOUT_NOTE_TITLE			"SMS-assistentti v2.99"
+#define SMSASSIST_ABOUT_NOTE_MESSAGE		"Tuomas Eerola, 2005\nwww.iki.fi/eerola"
+#define SMSASSIST_ERROR_NOTE_NO_SMSC_TITLE  "Virhe"
+#define SMSASSIST_ERROR_NOTE_NO_SMSC_MESSAGE "Tekstiviestikeskuksen\nnumero asettamatta."
+
+// Menu titles
+#define SMASSIST_MENU_TITLE_FILE			"Tiedosto"
+#define SMASSIST_MENU_TITLE_MODE			"Toiminto"
+#define SMASSIST_MENU_TITLE_TOOLS			"Tyˆkalut"
+
+// Menu items
+#define SMASSIST_MENU_ITEM_CLOSE			"Sulje"
+#define SMASSIST_MENU_ITEM_REPLY			"Vastaus"
+#define SMASSIST_MENU_ITEM_FORWARD			"V‰litys"
+#define SMASSIST_MENU_ITEM_MESSAGING		"Toimintoasetukset"
+#define SMASSIST_MENU_ITEM_ABOUT			"Tietoja..."
+
+// CBA buttons for view
+#define SMASSIST_CBA_BUTTON_ACTIVATE		"K‰ynnist‰"
+#define SMASSIST_CBA_BUTTON_DEACTIVATE      "Sammuta"
+#define SMASSIST_CBA_BUTTON_MESSAGING		"Toiminto-\nasetukset"
+#define SMASSIST_CBA_BUTTON_MODE			"Toiminto"
+#define SMASSIST_CBA_BUTTON_CLOSE			"Sulje"
+
+// Forwarding dialog
+#define SMASSIST_FORWARDING_DLG_TITLE				 "V‰litysasetukset"
+#define SMASSIST_FORWARDING_DLG_PROMPT_FWD_TO		 "Vastaanottaja"
+#define SMASSIST_FORWARDING_DLG_PROMPT_COUNTRY		 "[maa]"
+#define SMASSIST_FORWARDING_DLG_PROMPT_AREA			 "[verkko]"
+#define SMASSIST_FORWARDING_DLG_PROMPT_NUMBER		 "[numero]"
+#define SMASSIST_MESSAGING_DLG_BUTTON_OK			 "Hyv‰ksy"
+#define SMASSIST_MESSAGING_DLG_BUTTON_CANCEL		 "Peruuta"
+
+// Messaging dialog
+#define SMASSIST_MESSAGING_DLG_TITLE				 "Viestint‰asetukset"
+#define SMASSIST_MESSAGING_DLG_PROMPT_REPLY_TO		 "Vastaa"
+#define SMASSIST_MESSAGING_DLG_PROMPT_MESSAGE		 "Vastausviesti"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_SMS	 "SMS-viesteihin"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_MMS   "MMS-viesteihin"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_VOICE "Puheluihin"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_ALL	 "Kaikkiin"
+#define SMASSIST_MESSAGING_DLG_BUTTON_OK			 "Hyv‰ksy"
+#define SMASSIST_MESSAGING_DLG_BUTTON_CANCEL		 "Peruuta"
+
+// Mode select dialog
+#define SMASSIST_MODE_SELECT_DLG_TITLE						"Valitse sovelluksen toiminto"
+#define SMASSIST_MODE_SELECT_DLG_PROMPT_MODE				"Toiminto"
+#define SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_REPLY		"Vastaus"
+#define SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_FORWARD	"V‰litys"
+#define SMASSIST_MODE_SELECT_DLG_BUTTON_OK					"Aseta"
+#define SMASSIST_MODE_SELECT_DLG_BUTTON_CANCEL				"Peruuta"
+
+// Automatic deactivation dialog
+#define SMASSIST_DEACTIVATION_DLG_TITLE							"Automaattinen sammutus"
+#define SMASSIST_DEACTIVATION_DLG_PROMPT_IN_USE					"Sammutus"
+#define SMASSIST_DEACTIVATION_DLG_PROMPT_TIME					"Aika"
+#define SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_OFF	"Ei k‰ytˆss‰"
+#define SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_ON	"K‰ytˆss‰"
+#define SMASSIST_DEACTIVATION_DLG_BUTTON_CLOSE					"Sulje"
+
+// Message too long note
+#define SMSASSIST_ERROR_MESSAGE_MESSAGE_TEXT_TOO_LONG	"Viesti liian pitk‰."
+

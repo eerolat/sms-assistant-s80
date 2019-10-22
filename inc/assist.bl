@@ -1,0 +1,92 @@
+// SMASSIST.LOC
+//
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+// Dutch (Belgium) translation copyright (c) 2002 Rudi Timmermans 
+
+// BL Dutch (Belgium) version
+
+// Application title
+#define SMASSIST_APPLICATION_TITLE			 "SMS Assistant"
+#define SMASSIST_INDICATION_ACTIVE_REPLY     "Activeren"
+#define SMASSIST_INDICATION_INACTIVE_REPLY   "Deactiveren"
+#define SMASSIST_INDICATION_ACTIVE_FORWARD   "Activeren"
+#define SMASSIST_INDICATION_INACTIVE_FORWARD "Deactiveren"
+
+// Application view message
+#define SMASSIST_INSTRUCTIONS_REPLY			"In deze actieve mode zal SMS Assistant automatisch\nantwoord geven op de binnenkomende oproepen\nen je SMS berichten."
+#define SMASSIST_INSTRUCTIONS_FORWARD		"In deze actieve mode zal SMS Assistant automatisch\nal je SMS berichten doorsturen naar een andere\nmobile telefoon."
+
+// Reply message
+#define SMASSIST_MESSAGE_HEADER				"Automatisch beantwoorden: "
+
+// Notes
+#define SMASSIST_NO_MESSAGE_NOTE_TITLE		"Geen text ingegeven"
+#define SMASSIST_NO_MESSAGE_NOTE_MESSAGE	"Wil je SMS Assistant gebruiken zonder een ingegeven text\dat gebruikt wordt voor het doorsturen/beantwoorden van een oproep of SMS bericht?"
+#define SMASSIST_NO_RECIPIENT_NOTE_TITLE	"Geen telefoonnummer ingegeven"
+#define SMASSIST_NO_RECIPIENT_NOTE_MESSAGE	"Indien je geen telefoonnummer ingeeft\nzal SMS Assistant automatisch\ngedeactiveerd worden."
+#define SMASSIST_STARTUP_NOTE_MESSAGE		"SMS Assistant de goedkeuring\ngeven om automatisch SMS\nberichten te versturen."
+#define SMASSIST_STARTUP_CLOSING_MESSAGE    "SMS Assistant kan niet\ngestart worden zonder\ngoedkeuring."
+#define SMSASSIST_EXIT_NOTE_MESSAGE			"SMS Assistant zal afgesloten worden.\nWeet u het zeker ?"
+#define SMSASSIST_ABOUT_NOTE_TITLE			"SMS Assistant v2.99"
+#define SMSASSIST_ABOUT_NOTE_MESSAGE		"Tuomas Eerola, 2005\nwww.iki.fi/eerola\n\nDutch (B) by R. Timmermans" 
+#define SMSASSIST_ERROR_NOTE_NO_SMSC_TITLE  "Error"			 
+#define SMSASSIST_ERROR_NOTE_NO_SMSC_MESSAGE "Geen service nummer opgegeven!"
+
+// Menu titles
+#define SMASSIST_MENU_TITLE_FILE			"Bestand"
+#define SMASSIST_MENU_TITLE_MODE			"Mode"
+#define SMASSIST_MENU_TITLE_TOOLS			"Tools"
+
+// Menu items
+#define SMASSIST_MENU_ITEM_CLOSE			"Sluiten"
+#define SMASSIST_MENU_ITEM_REPLY			"Beantwoord"
+#define SMASSIST_MENU_ITEM_FORWARD			"Doorsturen"
+#define SMASSIST_MENU_ITEM_MESSAGING		"Configuratie"
+#define SMASSIST_MENU_ITEM_ABOUT			"Informatie"
+
+// CBA buttons for view
+#define SMASSIST_CBA_BUTTON_ACTIVATE		"Activeren"
+#define SMASSIST_CBA_BUTTON_DEACTIVATE      "Deactiveren"
+#define SMASSIST_CBA_BUTTON_MESSAGING		"Configuratie"
+#define SMASSIST_CBA_BUTTON_MODE			"Mode"
+#define SMASSIST_CBA_BUTTON_CLOSE			"Sluiten"
+
+// Forwarding dialog
+#define SMASSIST_FORWARDING_DLG_TITLE				 "Configureren doorsturen"
+#define SMASSIST_FORWARDING_DLG_PROMPT_FWD_TO		 "Aan"
+#define SMASSIST_FORWARDING_DLG_PROMPT_COUNTRY		 "[land]"
+#define SMASSIST_FORWARDING_DLG_PROMPT_AREA			 "[stad]"
+#define SMASSIST_FORWARDING_DLG_PROMPT_NUMBER		 "[nummer]"
+#define SMASSIST_FORWARDING_DLG_BUTTON_OK			 "OK"
+#define SMASSIST_FORWARDING_DLG_BUTTON_CANCEL		 "Annuleren"
+
+// Messaging dialog
+#define SMASSIST_MESSAGING_DLG_TITLE				 "Configure beantwoord"
+#define SMASSIST_MESSAGING_DLG_PROMPT_REPLY_TO		 "Beantwoorden aan"
+#define SMASSIST_MESSAGING_DLG_PROMPT_MESSAGE		 "Bericht"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_SMS	 "SMS"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_MMS   "MMS"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_VOICE "Oproepen"
+#define SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_ALL	 "Alles"
+#define SMASSIST_MESSAGING_DLG_BUTTON_OK			 "OK"
+#define SMASSIST_MESSAGING_DLG_BUTTON_CANCEL		 "Annuleren"
+
+// Mode select dialog
+#define SMASSIST_MODE_SELECT_DLG_TITLE						"Kies applicatie mode"
+#define SMASSIST_MODE_SELECT_DLG_PROMPT_MODE				"Mode"
+#define SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_REPLY		"Beantwoord"
+#define SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_FORWARD	"Doorsturen"
+#define SMASSIST_MODE_SELECT_DLG_BUTTON_OK					"OK"
+#define SMASSIST_MODE_SELECT_DLG_BUTTON_CANCEL				"Annuleren"
+
+// Automatic deactivation dialog
+#define SMASSIST_DEACTIVATION_DLG_TITLE							"Automatisch deactiveren"
+#define SMASSIST_DEACTIVATION_DLG_PROMPT_IN_USE					"Deactiveren"
+#define SMASSIST_DEACTIVATION_DLG_PROMPT_TIME					"Tijd"
+#define SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_OFF	"Uit"
+#define SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_ON	"Aan"
+#define SMASSIST_DEACTIVATION_DLG_BUTTON_CLOSE					"Sluiten"
+
+// Message too long note
+#define SMSASSIST_ERROR_MESSAGE_MESSAGE_TEXT_TOO_LONG	"De maximum lengte is overschreden."

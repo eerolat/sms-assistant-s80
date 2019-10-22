@@ -1,0 +1,460 @@
+//
+// ASSIST.RSS - resource file for SMS Assistant application
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+
+
+NAME SMAS
+
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include "assist.hrh"
+#include "assist.loc"
+
+
+RESOURCE RSS_SIGNATURE {}
+
+
+RESOURCE TBUF {buf="";}
+
+
+RESOURCE EIK_APP_INFO
+    {
+    menubar=r_assist_menubar;
+    hotkeys=r_assist_hotkeys;
+    cba=r_assist_cba;
+    }
+
+
+RESOURCE MENU_BAR r_assist_menubar
+    {
+    titles =
+        {
+        MENU_TITLE { menu_pane = r_assist_file_menu; txt = SMASSIST_MENU_TITLE_FILE;},
+        MENU_TITLE { menu_pane = r_assist_mode_menu; txt = SMASSIST_MENU_TITLE_MODE;},
+        MENU_TITLE { menu_pane = r_assist_tools_menu; txt = SMASSIST_MENU_TITLE_TOOLS;}
+        };
+    }
+
+
+RESOURCE MENU_PANE r_assist_file_menu
+    {
+    items =
+        {
+        MENU_ITEM { command = EEikCmdExit; txt = SMASSIST_MENU_ITEM_CLOSE; }
+        };
+    }
+
+
+RESOURCE MENU_PANE r_assist_mode_menu
+    {
+    items =
+        {
+        MENU_ITEM { command = EAssistCmdReply; flags = EEikMenuItemRadioStart; txt = SMASSIST_MENU_ITEM_REPLY; },
+        MENU_ITEM { command = EAssistCmdForward; flags = EEikMenuItemRadioStart; txt = SMASSIST_MENU_ITEM_FORWARD; }
+        };
+    }
+
+
+RESOURCE MENU_PANE r_assist_tools_menu
+    {
+    items =
+        {
+		MENU_ITEM { command = EAssistCmdMessage; txt = SMASSIST_MENU_ITEM_MESSAGING; },
+        MENU_ITEM { command = EAssistCmdAbout; txt = SMASSIST_MENU_ITEM_ABOUT; }
+        };
+    }
+
+
+RESOURCE HOTKEYS r_assist_hotkeys
+    {
+    control =
+        {
+        HOTKEY {command = EEikCmdExit; key = 'e'; }
+        };
+    }
+
+
+RESOURCE CBA r_assist_cba
+    {
+	related_buttons=r_assist_cba_group;
+    buttons=
+        {
+        CBA_BUTTON
+            {
+            id = EEikBidBlank;
+            txt = "";
+            },
+        CBA_BUTTON
+            {
+            id = EAssistCmdMessage;
+            txt = SMASSIST_CBA_BUTTON_MESSAGING;
+            },
+        CBA_BUTTON
+            {
+            id = EAssistCmdMode;
+            txt = SMASSIST_CBA_BUTTON_MODE;
+            },
+        CBA_BUTTON
+            {
+            id = EEikCmdExit;
+            txt = SMASSIST_CBA_BUTTON_CLOSE;
+            }
+        };
+    }
+
+
+RESOURCE BTG_RESOURCE_COLLECTION r_assist_cba_group
+	{
+	btg_buttons=
+		{
+		RESOURCE_LINK
+			{
+			id=r_assist_button_activate;
+			},
+		RESOURCE_LINK
+			{
+			id=r_assist_button_deactivate;
+			}
+		};
+	}
+
+
+RESOURCE CBA_BUTTON r_assist_button_activate
+	{
+	txt=SMASSIST_CBA_BUTTON_ACTIVATE; 
+	id=EAssistCmdActivate;
+	}
+
+
+RESOURCE CBA_BUTTON r_assist_button_deactivate
+	{
+	txt=SMASSIST_CBA_BUTTON_DEACTIVATE; 
+	id=EAssistCmdDeactivate;
+	}
+
+
+RESOURCE CBA_BUTTON r_assist_button_blank
+	{
+	txt=""; 
+	id=EEikBidBlank;
+	}
+
+
+RESOURCE DIALOG r_assist_messaging_dialog
+    {
+    title = SMASSIST_MESSAGING_DLG_TITLE;
+    buttons = r_assist_messaging_dialog_buttons;
+    flags = EEikDialogFlagWait;
+    items =
+        {
+		DLG_LINE
+            {
+            type=EEikCtChoiceList;
+            prompt=SMASSIST_MESSAGING_DLG_PROMPT_REPLY_TO;
+            id=EAssistCommunicationsSelector;
+            control=CHOICELIST
+                {
+                array_id=r_assist_communications_channels;
+                };
+			},
+        DLG_LINE
+            {
+            type = EEikCtEdwin;
+            prompt = SMASSIST_MESSAGING_DLG_PROMPT_MESSAGE;
+            id = EAssistMessageEditor;
+			itemflags = EEikDlgItemTakesEnterKey;
+            control = EDWIN
+                {
+                width = 10;
+                lines = 3;
+				maxlength=160;
+                };
+            }
+        };
+    }
+
+
+RESOURCE DIALOG r_assist_deactivation_dialog
+    {
+	title=SMASSIST_DEACTIVATION_DLG_TITLE;
+	flags=EEikDialogFlagWait|EEikDialogFlagButtonsBelow;
+    buttons=r_assist_deactivation_dialog_buttons;
+    items=
+		{
+        DLG_LINE
+			{
+			type=EEikCtChoiceList;
+            prompt=SMASSIST_DEACTIVATION_DLG_PROMPT_IN_USE;
+            id=EAssistDeactivationSelector;
+            control=CHOICELIST
+                {
+                array_id=r_assist_automatic_deactivation_status;
+                };
+			},
+		DLG_LINE
+			{
+			type=EEikCtTimeEditor;
+			prompt=SMASSIST_DEACTIVATION_DLG_PROMPT_TIME;
+			id=EAssistDeactivationTime;
+			control=TIME_EDITOR
+			    {
+			    minTime=TIME
+				    {
+				    };
+			    maxTime=TIME
+				    {
+				    second=59;
+				    minute=59;
+				    hour=23;
+				    };
+                flags=EEikTimeWithoutSecondsField;
+			    };
+			}
+		};
+	}
+
+
+RESOURCE ARRAY r_assist_automatic_deactivation_status
+	{
+	items=
+		{
+		LBUF { txt=SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_OFF; },
+		LBUF { txt=SMASSIST_DEACTIVATION_DLG_CHOICELIST_DEACTIVATION_ON; }
+		};
+	}
+
+
+RESOURCE DIALOG r_assist_mode_select_dialog
+    {
+    title = SMASSIST_MODE_SELECT_DLG_TITLE;
+    buttons = r_assist_mode_select_dialog_buttons;
+    flags = EEikDialogFlagWait;
+    items =
+        {
+		DLG_LINE
+            {
+            type=EEikCtChoiceList;
+            prompt=SMASSIST_MODE_SELECT_DLG_PROMPT_MODE;
+            id=EAssistModeSelector;
+            control=CHOICELIST
+                {
+                array_id=r_assist_modes;
+                };
+			}
+        };
+    }
+
+
+RESOURCE DIALOG r_assist_forwarding_dialog
+    {
+    title = SMASSIST_FORWARDING_DLG_TITLE;
+    buttons = R_EIK_BUTTONS_CANCEL_OK;
+    flags = EEikDialogFlagWait;
+    items =
+        {
+		DLG_LINE
+			{
+			type = EEikCtTelephoneNumberEditor;
+			prompt = SMASSIST_FORWARDING_DLG_PROMPT_FWD_TO;
+			id = EAssistForwardRecipient;
+			control = TELNUMBER
+				{
+				country_prompt = SMASSIST_FORWARDING_DLG_PROMPT_COUNTRY;
+				area_prompt = SMASSIST_FORWARDING_DLG_PROMPT_AREA;
+				number_prompt = SMASSIST_FORWARDING_DLG_PROMPT_NUMBER;
+				widthinpixels = 160;
+				};
+			}
+        };
+    }
+
+
+RESOURCE ARRAY r_assist_communications_channels
+	{
+	items=
+		{
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_VOICE; },
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_SMS; },
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_MMS; },
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_ALL; }
+		};
+	}
+
+
+RESOURCE ARRAY r_assist_forwarding_status
+	{
+	items=
+		{
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_FORWARD_OFF; },
+		LBUF { txt=SMASSIST_MESSAGING_DLG_CHOICELIST_ITEM_FORWARD_ON; }
+		};
+	}
+
+
+RESOURCE ARRAY r_assist_modes
+	{
+	items=
+		{
+		LBUF { txt=SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_REPLY; },
+		LBUF { txt=SMASSIST_MODE_SELECT_DLG_CHOICELIST_ITEM_FORWARD; }
+		};
+	}
+
+
+RESOURCE DLG_BUTTONS r_assist_messaging_dialog_buttons
+    {
+	buttons=
+		{
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+		DLG_BUTTON { id=EAssistBidOk; button=CMBUT {txt=SMASSIST_MESSAGING_DLG_BUTTON_OK;}; flags=0;},
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+        DLG_BUTTON { id=EAssistBidCancel; button=CMBUT {txt=SMASSIST_MESSAGING_DLG_BUTTON_CANCEL;}; hotkey=EEikBidCancel; flags=0;}
+        };
+	}
+
+
+RESOURCE DLG_BUTTONS r_assist_mode_select_dialog_buttons
+    {
+	buttons=
+		{
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+		DLG_BUTTON { id=EAssistBidOk; button=CMBUT {txt=SMASSIST_MODE_SELECT_DLG_BUTTON_OK;}; flags=0;},
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+        DLG_BUTTON { id=EAssistBidCancel; button=CMBUT {txt=SMASSIST_MODE_SELECT_DLG_BUTTON_CANCEL;}; hotkey=EEikBidCancel; flags=0;}
+        };
+	}
+
+
+RESOURCE DLG_BUTTONS r_assist_deactivation_dialog_buttons
+    {
+	buttons=
+		{
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+        DLG_BUTTON { id=EEikBidBlank; button=CMBUT {txt="";}; flags=0; },
+        DLG_BUTTON { id=EAssistBidOk; button=CMBUT {txt=SMASSIST_DEACTIVATION_DLG_BUTTON_CLOSE;}; flags=0;}
+        };
+	}
+
+
+RESOURCE TBUF r_assist_title
+    {
+    buf=SMASSIST_APPLICATION_TITLE;
+    }
+
+
+RESOURCE TBUF r_assist_title_active_reply
+    {
+    buf=SMASSIST_INDICATION_ACTIVE_REPLY;
+    }
+
+
+RESOURCE TBUF r_assist_title_not_active_reply
+    {
+    buf=SMASSIST_INDICATION_INACTIVE_REPLY;
+    }
+
+
+RESOURCE TBUF r_assist_title_active_forward
+    {
+    buf=SMASSIST_INDICATION_ACTIVE_FORWARD;
+    }
+
+
+RESOURCE TBUF r_assist_title_not_active_forward
+    {
+    buf=SMASSIST_INDICATION_INACTIVE_FORWARD;
+    }
+
+
+RESOURCE TBUF r_assist_message_reply
+    {
+    buf=SMASSIST_INSTRUCTIONS_REPLY;
+    }
+
+
+RESOURCE TBUF r_assist_message_forward
+    {
+    buf=SMASSIST_INSTRUCTIONS_FORWARD;
+    }
+
+
+RESOURCE TBUF r_assist_message_header
+    {
+    buf=SMASSIST_MESSAGE_HEADER;
+    }
+
+
+RESOURCE TBUF r_assist_no_message_note_title
+    {
+    buf=SMASSIST_NO_MESSAGE_NOTE_TITLE;
+    }
+
+
+RESOURCE TBUF r_assist_no_message_note_message
+    {
+    buf=SMASSIST_NO_MESSAGE_NOTE_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_no_recipient_note_title
+    {
+    buf=SMASSIST_NO_RECIPIENT_NOTE_TITLE;
+    }
+
+
+RESOURCE TBUF r_assist_no_recipient_note_message
+    {
+    buf=SMASSIST_NO_RECIPIENT_NOTE_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_startup_note_message
+    {
+    buf=SMASSIST_STARTUP_NOTE_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_startup_note_closing_message
+    {
+    buf=SMASSIST_STARTUP_CLOSING_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_exit_note_message
+    {
+    buf=SMSASSIST_EXIT_NOTE_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_about_note_title
+    {
+    buf=SMSASSIST_ABOUT_NOTE_TITLE;
+    }
+
+
+RESOURCE TBUF r_assist_about_note_message
+    {
+    buf=SMSASSIST_ABOUT_NOTE_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_error_note_no_smsc_defined_title
+    {
+    buf=SMSASSIST_ERROR_NOTE_NO_SMSC_TITLE;
+    }
+
+
+RESOURCE TBUF r_assist_error_note_no_smsc_defined_message
+    {
+    buf=SMSASSIST_ERROR_NOTE_NO_SMSC_MESSAGE;
+    }
+
+
+RESOURCE TBUF r_assist_message_too_long
+    {
+    buf=SMSASSIST_ERROR_MESSAGE_MESSAGE_TEXT_TOO_LONG;
+    }
+

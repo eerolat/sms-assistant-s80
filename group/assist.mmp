@@ -1,0 +1,46 @@
+//
+// ASSIST.MMP - make file for SMS assistant application
+// Copyright (c) 2001-2005 Tuomas Eerola
+//
+
+TARGET          ASSIST.APP
+TARGETTYPE      APP
+UID             0X100039CE 0x101F3CB6
+TARGETPATH	\system\apps\assist
+
+SOURCEPATH      ..\src
+SOURCE          assistdata.cpp
+SOURCE          assistapp.cpp
+SOURCE          assistdocument.cpp
+SOURCE          assistappui.cpp
+SOURCE          assistappview.cpp
+SOURCE          assistdeactivationdialog.cpp
+SOURCE          assistforwardingdialog.cpp
+SOURCE          assistmessagedialog.cpp
+SOURCE          assistmodeselectdialog.cpp
+SOURCE          assistdeactivationtimer.cpp
+SOURCE          assistlogmonitor.cpp
+
+RESOURCE        assist.rss
+
+USERINCLUDE     ..\inc
+
+SYSTEMINCLUDE   \epoc32\include
+
+LIBRARY         cone.lib
+LIBRARY         apparc.lib
+LIBRARY         eikcore.lib
+LIBRARY			eikcoctl.lib
+LIBRARY         euser.lib
+LIBRARY         msgs.lib
+LIBRARY         smcm.lib
+LIBRARY         gsmu.lib
+LIBRARY			estor.lib
+LIBRARY			efsrv.lib
+LIBRARY			logcli.lib
+LIBRARY			eikctl.lib
+LIBRARY         eikdlg.lib
+LIBRARY			cknctl.lib
+LIBRARY			ckndlg.lib
+
+AIF assist.aif ..\aif assistaif.rss c8 context_pane_icon.bmp context_pane_icon_mask.bmp list_icon.bmp list_icon_mask.bmp
